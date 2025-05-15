@@ -1,7 +1,7 @@
 .vs
 Temp/
 Library/
-UserSettings/
+/UserSettings/
 *.suo
 *.user
 *.userprefs
