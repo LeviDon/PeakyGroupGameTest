@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
     }
 
     public GameObject PausePanel;
     public GameObject PauseButton;
     public GameObject UnPauseButton;
+    public GameObject GameOverText;
 
     public FloatingTextManager floatingTextManager;
 
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
         PausePanel.SetActive(true);
         UnPauseButton.SetActive(true);
         PauseButton.SetActive(false);
+        GameOverText.GetComponent<Text>().text = "PAUSE";
     }
 
     public void UnPauseGame()
@@ -47,5 +49,6 @@ public class GameManager : MonoBehaviour
         PausePanel.SetActive(false);
         UnPauseButton.SetActive(false);
         PauseButton.SetActive(true);
+        GameOverText.GetComponent<Text>().text = "GAME OVER";
     }
 }

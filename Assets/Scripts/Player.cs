@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class Player : MonoBehaviour
 {
@@ -37,8 +36,6 @@ public class Player : MonoBehaviour
 
         moveDelta = new Vector3(combinedInput.x, combinedInput.y, 0);
 
-        //moveDelta = new Vector3(x, y, 0);
-
         if (moveDelta.x > 0)
         {
             transform.localScale = Vector3.one;
@@ -48,13 +45,12 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        // Horizontal
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * speed * Time.deltaTime), LayerMask.GetMask("Blocking"));
         if ((hit.collider == null) || (movementJoystick.Direction.x != 0))
         {
             transform.Translate(moveDelta.x * speed * Time.deltaTime, 0, 0);
         }
-        // Vertical
+
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * speed * Time.deltaTime), LayerMask.GetMask("Blocking"));
         if ((hit.collider == null) || (movementJoystick.Direction.y != 0))
         {
@@ -69,7 +65,6 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-
     }
 
     public void BoostSpeedTemporarily()

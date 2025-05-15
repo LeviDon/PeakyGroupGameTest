@@ -1,3 +1,10 @@
 .vs
-/Temp
-/Library
+Temp/
+Library/
+UserSettings/
+*.suo
+*.user
+*.userprefs
+*.unityproj
+*.sln
+*.swp

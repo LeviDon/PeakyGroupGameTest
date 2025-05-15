@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
@@ -12,7 +10,6 @@ public class CameraMotor : MonoBehaviour
     {
         Vector3 delta = Vector3.zero;
 
-        // This is to check if we are inside the bounds on the X Axis
         float deltaX = lookAt.position.x - transform.position.x;
         if (deltaX > boundX || deltaX < -boundX)
         {
@@ -26,7 +23,6 @@ public class CameraMotor : MonoBehaviour
             }
         }
 
-        // This is to check if we are inside the bounds on the Y Axis
         float deltaY = lookAt.position.y - transform.position.y;
         if (deltaY > boundY || deltaY < -boundY)
         {

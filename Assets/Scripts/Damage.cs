@@ -14,6 +14,4 @@ public class Damage : MonoBehaviour
             GameManager.instance.ShowText("-1", 30, Color.red, transform.position, Vector3.up * 20, 1.5f);
         }
     }
-
-
 }

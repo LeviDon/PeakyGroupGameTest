@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -37,10 +36,6 @@ public class Spawner : MonoBehaviour
         Destroy(spawnedItem, 5f);
 
         StartCoroutine(spawnItem(interval));
-
-        //Instantiate(itemToSpawn, new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-1.8f, 1.8f), 0), Quaternion.identity);
-
-        //StartCoroutine(spawnItem(interval));
     }
     
 }
